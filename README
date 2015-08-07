@@ -3,6 +3,9 @@ Yocto layer for Xenomai Real-time support for various SoCs.
 This layer implements xenomai on the following SoCs:
 
 raspberrypi
+beaglebone
+riotboard (i.MX6)
+x86
 
 Layer depends on:
 Poky

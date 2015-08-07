@@ -6,8 +6,8 @@ SECTION = "xenomai"
 HOMEPAGE = "http://www.xenomai.org/"
 PR = "r0"
 
-SRC_URI = "http://download.gna.org/xenomai/stable/xenomai-2.6.3.tar.bz2"
-
+SRC_URI = "http://download.gna.org/xenomai/stable/xenomai-2.6.3.tar.bz2 \
+	file://0001-Set-XENO_CC-to-CC.patch"
 
 S = "${WORKDIR}/xenomai-${PV}"
 

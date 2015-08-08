@@ -4,8 +4,15 @@ This layer implements xenomai on the following SoCs:
 
 raspberrypi
 beaglebone
-riotboard (i.MX6)
+riotboard (i.MX6) -> to be used with fsl-community-bsp-platform
 x86
+
+As an example (RPi) you can add the following lines to your local.conf
+
+PREFERRED_PROVIDER_virtual/kernel = "linux-xenomai-raspberrypi"
+PREFERRED_VERSION_xenomai = "2.6.3"
+IMAGE_INSTALL_append = " xenomai"
+
 
 Layer depends on:
 Poky
@@ -14,3 +21,6 @@ branch: dylan
 revision: HEAD
 
 Layer maintainer: Jonathan Mitchell
+
+
+PF

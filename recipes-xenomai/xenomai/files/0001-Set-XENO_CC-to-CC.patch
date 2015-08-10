@@ -1,0 +1,25 @@
+From fee4a49406129f5e0c1768a22bc087417c31e846 Mon Sep 17 00:00:00 2001
+From: Pierre FICHEUX <pierre.ficheux@openwide.fr>
+Date: Sat, 1 Aug 2015 14:32:12 +0200
+Subject: [PATCH] Set XENO_CC to ${CC}
+
+---
+ scripts/xeno-config.in |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/scripts/xeno-config.in b/scripts/xeno-config.in
+index f96d68e..63ab516 100644
+--- a/scripts/xeno-config.in
++++ b/scripts/xeno-config.in
+@@ -11,7 +11,7 @@ includedir="@includedir@"
+ 
+ XENO_VERSION="@PACKAGE_VERSION@"
+ XENO_PREFIX="${staging}${prefix}"
+-XENO_CC="@CC@"
++XENO_CC=${CC}
+ XENO_TARGET_ARCH="@XENO_TARGET_ARCH@"
+ XENO_BASE_CFLAGS="-I${staging}${includedir} @XENO_USER_APP_CFLAGS@ -D__XENO__"
+ XENO_BASE_LDFLAGS="-L${staging}${libdir} -lxenomai -lpthread -lrt @XENO_USER_APP_LDFLAGS@"
+-- 
+1.7.9.5
+

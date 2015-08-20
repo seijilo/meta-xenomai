@@ -33,12 +33,6 @@ do_prepare_kernel () {
     $xenomai_src/scripts/prepare-kernel.sh --arch=x86 --linux=$linux_src --default
 }
 
-do_setup_defconfig() {
-    cp ${WORKDIR}/defconfig ${S}/.config
-    yes '' | oe_runmake oldconfig
-}
-
-addtask setup_defconfig before do_configure after do_patch
 addtask prepare_kernel after do_patch before do_configure
 
 S = "${WORKDIR}/linux-3.8.13"

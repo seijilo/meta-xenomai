@@ -44,13 +44,6 @@ do_prepare_kernel () {
 
     #prepare kernel
     $xenomai_src/scripts/prepare-kernel.sh --arch=arm --linux=$linux_src
-
-    #switch pwd to xenomai source root
-    OLD_DIR=$(pwd)
-    cd $xenomai_src
-
-    #switch pwd back to bitbake default
-    cd $OLD_DIR
 }
 
 addtask prepare_kernel after do_patch before do_configure

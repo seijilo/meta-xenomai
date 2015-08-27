@@ -27,7 +27,7 @@ SRC_URI +=  "file://ipipe-core-3.8.13-beaglebone-post.patch;md5=f7c6c4c8cafbda65
 #kernel defconfig
 SRC_URI +=  "file://defconfig"
 
-KERNEL_IMAGETYPE = "zImage"
+KERNEL_IMAGETYPE ?= "uImage"
 
 COMPATIBLE_MACHINE = "beaglebone"
 

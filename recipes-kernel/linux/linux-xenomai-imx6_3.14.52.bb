@@ -20,15 +20,15 @@ SRC_URI = "git://github.com/boundarydevices/linux-imx6.git;branch=${SRCBRANCH} \
 
 # Xenomai source (prepare_kernel.sh script)
 SRC_URI += "http://xenomai.org/downloads/xenomai/stable/xenomai-3.0.2.tar.bz2;name=xeno"
-SRC_URI[xeno.md5sum] = "281790d044007ddbfc62a38a51520dd5"
-SRC_URI[xeno.sha256sum] = "349d257ace595b07edb3bea4f90abb2b8bdbcfc15463c99739b6d7bdad499610"
+SRC_URI[xeno.md5sum] = "bf0986db38f02174b2cd55ec6ed2f90b"
+SRC_URI[xeno.sha256sum] = "731fbf720c4e6c31fe00a668bb9b2659a5dce06ee8ba684c14f8b2da8d4957bf"
 
 do_prepare_kernel () {
     # Set linux kernel source directory
     linux_src="${WORKDIR}/git"
 
     # Set xenomai source directory 
-    xenomai_src="${WORKDIR}/xenomai-3.0"
+    xenomai_src="${WORKDIR}/xenomai-3.0.2"
 
     # Set ipipe patch (adapted for linux-imx kernel)
     ipipe_patch="${WORKDIR}/ipipe-core-3.14.44-arm-17-adapted-for-Linux-imx.patch"

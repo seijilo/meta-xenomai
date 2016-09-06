@@ -1,26 +1,19 @@
-Yocto layer for Xenomai Real-time support for various SoCs. 
+Yocto layer for Xenomai Real-time support for i.MX SoCs. 
 
 This layer implements xenomai on the following SoCs:
 
-raspberrypi
-beaglebone
-riotboard (i.MX6) -> to be used with fsl-community-bsp-platform
-x86
+imx6evk or Boundary device boards like nitrogen6*.
 
-As an example (RPi) you can add the following lines to your local.conf
-
-PREFERRED_PROVIDER_virtual/kernel = "linux-xenomai-raspberrypi"
-PREFERRED_VERSION_xenomai = "2.6.3"
+Exemple of local.conf file :
+MACHINE = "imx6qsabrelite"
+PREFERRED_PROVIDER_virtual/kernel = "linux-xenomai-imx6"
+PREFERRED_VERSION_xenomai = "3.0.2"
 IMAGE_INSTALL_append = " xenomai"
 
+Layer depends on other layers (branch jethro) :
+git://git.yoctoproject.org/poky.git
+https://github.com/Freescale/meta-fsl-arm
+https://github.com/Freescale/meta-fsl-arm-extra
+git://git.openembedded.org/meta-openembedded
+git://git.yoctoproject.org/poky.git
 
-Layer depends on:
-Poky
-URI: git://git.yoctoproject.org/poky.git
-branch: dylan
-revision: HEAD
-
-Layer maintainer: Jonathan Mitchell
-
-
-PF

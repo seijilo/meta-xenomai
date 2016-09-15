@@ -1,7 +1,7 @@
 DESCRIPTION = "Provides userspace xenomai support and libraries needed to for \
 real-time applications using the xenomai RTOS implementation (v3)"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://include/COPYING;md5=60faa041c8d4a75ab87e115a9469d94d"
+LIC_FILES_CHKSUM = "file://include/COPYING;md5=79ed705ccb9481bf9e7026b99f4e2b0e"
 SECTION = "xenomai"
 HOMEPAGE = "http://www.xenomai.org/"
 PR = "r0"
@@ -13,6 +13,8 @@ S = "${WORKDIR}/xenomai-${PV}"
 inherit autotools pkgconfig
 
 includedir = "/usr/include/xenomai"
+
+EXTRA_OECONF_append_mx6 = "--enable-smp"
 
 #Fixes QA Issues: non debug package contains .debug directory
 FILES_${PN}-dbg += "/usr/bin/regression/posix/.debug"

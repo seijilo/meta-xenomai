@@ -16,6 +16,7 @@ DEPENDS += "lzop-native bc-native"
 SRC_URI = "git://github.com/boundarydevices/linux-imx6.git;branch=${SRCBRANCH} \
            file://defconfig \
            file://ipipe-core-3.14.44-arm-17-adapted-for-Linux-imx.patch;apply=0 \
+           file://0001-fix-build-cpufreq.patch \
 "
 
 # Xenomai source (prepare_kernel.sh script)

@@ -1,0 +1,22 @@
+Author: Vincent Dehors <vincent.dehors@openwide.fr>
+Date:   Wed Sep 7 14:16:04 2016 +0200
+
+    mach-imx: Fix build even if CONFIG_CPUFREQ is unset
+
+diff --git a/arch/arm/mach-imx/common.h b/arch/arm/mach-imx/common.h
+index f73497f..2b014a7 100644
+--- a/arch/arm/mach-imx/common.h
++++ b/arch/arm/mach-imx/common.h
+@@ -192,7 +192,11 @@ int imx_ddrc_get_ddr_type(void);
+ #else
+ static inline int imx_ddrc_get_ddr_type(void) { return 0; }
+ #endif
++#ifdef CONFIG_ARM_IMX6Q_CPUFREQ
+ void imx_busfreq_map_io(void);
++#else
++static inline void imx_busfreq_map_io(void) { return; }
++#endif
+ void imx6sx_low_power_idle(void);
+ void imx6q_enable_rbc(bool enable);
+ void imx7d_low_power_idle(void);
+
